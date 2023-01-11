@@ -1,4 +1,5 @@
-export class CurlHelper {
+//export class CurlHelper {
+module.exports = class CurlHelper {
   constructor(config) {
     this.request = config;
   }
