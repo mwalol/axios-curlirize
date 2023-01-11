@@ -1,4 +1,5 @@
-import { CurlHelper } from "./lib/CurlHelper.js";
+// import { CurlHelper } from "./lib/CurlHelper.js";
+const { CurlHelper } = require("./lib/CurlHelper.js");
 
 function defaultLogCallback(curlResult, err) {
   const { command } = curlResult;
@@ -9,7 +10,8 @@ function defaultLogCallback(curlResult, err) {
   }
 }
 
-export default (instance, callback = defaultLogCallback) => {
+//export default (instance, callback = defaultLogCallback) => {
+module.exports = function (instance, callback = defaultLogCallback) {
   instance.interceptors.request.use((req) => {
     try {
       const curl = new CurlHelper(req);
